@@ -14,6 +14,11 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T debug --32bits
         ./waf.bat build
+    - name: Upload windows-i386 build
+      uses: actions/upload-artifact@v3
+      with:
+        name: windows-i386-build
+        path: build/
 
   build-windows-amd64:
     runs-on: windows-2019
@@ -25,6 +30,11 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T debug
         ./waf.bat build
+    - name: Upload windows-amd64 build
+      uses: actions/upload-artifact@v3
+      with:
+        name: windows-amd64-build
+        path: build/
 
   build-dedicated-windows-i386:
     runs-on: windows-2019
@@ -36,6 +46,11 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T debug -d
         ./waf.bat build
+    - name: Upload dedicated windows-i386 build
+      uses: actions/upload-artifact@v3
+      with:
+        name: dedicated-windows-i386-build
+        path: build/
 
   build-dedicated-windows-amd64:
     runs-on: windows-2019
@@ -47,3 +62,8 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T debug -d
         ./waf.bat build
+    - name: Upload dedicated windows-amd64 build
+      uses: actions/upload-artifact@v3
+      with:
+        name: dedicated-windows-amd64-build
+        path: build/
