@@ -12,6 +12,7 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T debug --32bits
         ./waf.bat build
+    - uses: actions/upload-artifact@v4.6.2
   build-windows-amd64:
     runs-on: windows-2019
 
@@ -23,7 +24,7 @@ jobs:
         ./waf.bat configure -T debug
         ./waf.bat build
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4.6.2
   build-dedicated-windows-i386:
     runs-on: windows-2019
 
@@ -35,7 +36,7 @@ jobs:
         ./waf.bat configure -T debug -d
         ./waf.bat build
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4.6.2
   build-dedicated-windows-amd64:
     runs-on: windows-2019
 
@@ -47,7 +48,7 @@ jobs:
         ./waf.bat configure -T debug -d
         ./waf.bat build
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4.6.2
 
     - name: Download a Build Artifact
       uses: actions/download-artifact@v4.2.1
