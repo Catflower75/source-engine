@@ -12,11 +12,12 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T release --prefix=cstrike --build-games=hl2 --disable-warns
         ./waf.bat build
+        ./waf.bat install
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
       with:
         name: windows-i386-artifact
-        path: ./build  # Replace './build' with the actual output directory if different
+        path: ./hl2  # Replace './build' with the actual output directory if different
 
   build-windows-amd64:
     runs-on: windows-2019
@@ -28,11 +29,12 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T release --prefix=cstrike --build-games=cstrike --disable-warns
         ./waf.bat build
+        ./waf.bat install
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
       with:
         name: windows-amd64-artifact
-        path: ./build  # Replace './build' with the actual output directory if different
+        path: ./hl2  # Replace './build' with the actual output directory if different
 
   build-dedicated-windows-i386:
     runs-on: windows-2019
@@ -44,11 +46,12 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T release --prefix=cstrike --build-games=cstrike --disable-warns
         ./waf.bat build
+        ./waf.bat install
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
       with:
         name: dedicated-windows-i386-artifact
-        path: ./build  # Replace './build' with the actual output directory if different
+        path: ./hl2  # Replace './build' with the actual output directory if different
 
   build-dedicated-windows-amd64:
     runs-on: windows-2019
@@ -60,8 +63,9 @@ jobs:
         git submodule init && git submodule update
         ./waf.bat configure -T release --prefix=cstrike --build-games=cstrike --disable-warns
         ./waf.bat build
+        ./waf.bat install
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
       with:
         name: dedicated-windows-amd64-artifact
-        path: ./build  # Replace './build' with the actual output directory if different
+        path: ./hl2  # Replace './build' with the actual output directory if different
