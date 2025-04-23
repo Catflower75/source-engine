@@ -10,7 +10,7 @@ jobs:
     - name: Build windows-i386
       run: |
         git submodule init && git submodule update
-        ./waf.bat configure -T debug --32bits
+        ./waf.bat configure -T release --prefix=hl2 --build-games=hl2 --disable-warns
         ./waf.bat build
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
@@ -26,7 +26,7 @@ jobs:
     - name: Build windows-amd64
       run: |
         git submodule init && git submodule update
-        ./waf.bat configure -T debug
+        ./waf.bat configure -T release --prefix=hl2 --build-games=hl2 --disable-warns
         ./waf.bat build
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
@@ -42,7 +42,7 @@ jobs:
     - name: Build dedicated windows-i386
       run: |
         git submodule init && git submodule update
-        ./waf.bat configure -T debug -d
+        ./waf.bat configure -T release --prefix=hl2 --build-games=hl2 --disable-warns
         ./waf.bat build
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
@@ -58,7 +58,7 @@ jobs:
     - name: Build dedicated windows-amd64
       run: |
         git submodule init && git submodule update
-        ./waf.bat configure -T debug -d
+        ./waf.bat configure -T release --prefix=hl2 --build-games=hl2 --disable-warns
         ./waf.bat build
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
