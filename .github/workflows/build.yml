@@ -14,6 +14,10 @@ jobs:
         ./waf.bat build
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
+      with:
+        name: windows-i386-artifact
+        path: ./build  # Replace './build' with the actual output directory if different
+
   build-windows-amd64:
     runs-on: windows-2019
 
@@ -26,6 +30,10 @@ jobs:
         ./waf.bat build
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
+      with:
+        name: windows-amd64-artifact
+        path: ./build  # Replace './build' with the actual output directory if different
+
   build-dedicated-windows-i386:
     runs-on: windows-2019
 
@@ -38,6 +46,10 @@ jobs:
         ./waf.bat build
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
+      with:
+        name: dedicated-windows-i386-artifact
+        path: ./build  # Replace './build' with the actual output directory if different
+
   build-dedicated-windows-amd64:
     runs-on: windows-2019
 
@@ -50,3 +62,6 @@ jobs:
         ./waf.bat build
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.6.2
+      with:
+        name: dedicated-windows-amd64-artifact
+        path: ./build  # Replace './build' with the actual output directory if different
