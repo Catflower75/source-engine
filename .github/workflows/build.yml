@@ -15,7 +15,7 @@ jobs:
         ./waf.bat configure -T debug --32bits
         ./waf.bat build
     - name: Upload windows-i386 build
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: windows-i386-build
         path: build/
@@ -31,7 +31,7 @@ jobs:
         ./waf.bat configure -T debug
         ./waf.bat build
     - name: Upload windows-amd64 build
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: windows-amd64-build
         path: build/
@@ -47,7 +47,7 @@ jobs:
         ./waf.bat configure -T debug -d
         ./waf.bat build
     - name: Upload dedicated windows-i386 build
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: dedicated-windows-i386-build
         path: build/
@@ -63,7 +63,7 @@ jobs:
         ./waf.bat configure -T debug -d
         ./waf.bat build
     - name: Upload dedicated windows-amd64 build
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: dedicated-windows-amd64-build
         path: build/
